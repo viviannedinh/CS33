@@ -1,0 +1,39 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11760\viewh18000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Vivianne Dinh\
+305329335\
+\
+Homework #3\
+\
+void psum4x1a(float a[], float p[], long n) \{\
+   long i;\
+   float val, last_val;\
+   float t1, t2, t3, t4;\
+   last_val = p[0] = a[0];\
+\
+   for (i = 1; i < n - 4; i++) \{\
+      t1 = last_val + a[1];\
+      t2 = t1 + a[i+1];\
+      t3 = t2 + a[i+2];\
+      t4 = t3 + a[i+3];\
+\
+      p[i] = t1;\
+      p[i+1] = t2;\
+      p[i+2] = t3;\
+      p[i+3] = t4;\
+\
+      last_val = last_val + (a[i] + a[i+1] + a[i+2] + a[i+3]);\
+   \}\
+\
+   for ( ; i < n; i++) \{\
+      last_val += a[i];\
+      p[i] = last_val;\
+   \}\
+\}\
+\
+The program is limited by the latency limits of the machine because it cannot take advantage of pipeline capabilities since we are accumulating values, and the processor will stall, waiting to begin a new operation until the current one has completed. }
